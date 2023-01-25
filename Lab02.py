@@ -2,7 +2,7 @@ def main():
 
     # TODO: Step 2 - Create a complex data structure
     about_me = {
-                'full_name' : 'Colin Sutherland',
+        'full_name' : 'Colin Sutherland',
         'studnet_id' : 10261370,
         'toppings' : [
             {
@@ -42,7 +42,7 @@ def main():
     
 # TODO: Step 4 - Function that prints student name and ID	
 def print_student_name_and_id(about_me):
-    print(f'My name is {about_me["full_name"]}, but you can call me Sir {about_me["full_name"].split(1)}')
+    print(f'My name is {about_me["full_name"]}, but you can call me Sir {about_me["full_name".split[0]]}')
     print(f'My student ID is {about_me["student_id"]}')
     return
     
@@ -72,7 +72,7 @@ def print_movie_genres(about_me):
 
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
 def print_movie_titles(movie_list):
-    
+
     return
     
 if __name__ == '__main__':
