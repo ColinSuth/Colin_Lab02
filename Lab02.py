@@ -62,16 +62,26 @@ def print_movie_genres(about_me):
 
     print('\nI like to watch ', end='')
     movie_genres = [g["genre"]for g in about_me['movie_list']]
-    movie_csl = ', '.join(movie_genres)
-    print(f'{movie_csl} movies.')
+    n = len(movie_genres)
+    if n == 1:
+        print(f'{movie_genres[0]} movies')
+        return
+    else:
+        movie_csl = ', '.join(movie_genres[:-1])
+        print(f'{movie_csl} and {movie_genres[-1]} movies.')
     return 
 
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
 def print_movie_titles(movie_list):
     print('\nSome of my favourite movies are ', end='')
     movie_title = [y['name'].title() for y in movie_list]
-    movie_csl = ', '.join(movie_title)
-    print(f'{movie_csl}!')
+    n = len(movie_title)
+    if n == 1:
+        print(f'{movie_title[0]}!')
+        return
+    else:
+        movie_csl = ', '.join(movie_title[:-1])
+        print(f'{movie_csl} and {movie_title[-1]}!')
     return
     
 if __name__ == '__main__':
