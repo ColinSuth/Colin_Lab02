@@ -31,7 +31,7 @@ def main():
     add_pizza_toppings(about_me, ('PEPPERONI', 'PESTO'))
     print_pizza_toppings(about_me)
     print_movie_genres(about_me)
-    print_movie_titles(about_me)
+    print_movie_titles(about_me['movie_list'])
     
 # TODO: Step 4 - Function that prints student name and ID	
 def print_student_name_and_id(about_me):
@@ -46,7 +46,8 @@ def add_pizza_toppings(about_me, toppings):
         print(f'- {p}')
     about_me['toppings'].extend(toppings)
     about_me['toppings'].sort()
-    #add lower case toppings
+    about_me['toppings'] = [x.lower() for x in about_me['toppings']]
+   
     return
 
 # TODO: Step 6 - Function that prints bullet list of pizza toppings
@@ -68,7 +69,7 @@ def print_movie_genres(about_me):
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
 def print_movie_titles(movie_list):
     print('\nSome of my favourite movies are ', end='')
-    movie_title = movie_list['name']
+    movie_title = [y['name'].title() for y in movie_list]
     movie_csl = ', '.join(movie_title)
     print(f'{movie_csl}!')
     return
